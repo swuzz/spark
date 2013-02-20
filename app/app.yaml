@@ -1,0 +1,18 @@
+application: sudden-ocelot
+version: 4
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /stylesheets
+  static_dir: stylesheets
+- url: /javascripts
+  static_dir: javascripts
+- url: /partials
+  static_dir: partials
+- url: /cards
+  static_dir: cards
+
+- url: /.*
+  script: helloworld.app

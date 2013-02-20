@@ -1,0 +1,52 @@
+<div class="col">
+	<div class="inputRow col1">
+		<label for="name">Deck name </label>
+		<input id="name"/>
+	</div>
+	<div on-enter="pushCard()">
+		<div class="inputRow col1">
+			<label for="query">Add a card </label>
+			<input 
+				id="query"
+				ng-model="query" 
+				copy-arrow-presses
+				ng-change="filterCards()"/>
+		</div>
+		<select
+			size="15" 
+			class="filteredCards col1" 
+			ng-model="selectedCard" 
+			ng-options="card.name for card in filteredCards">
+		</select>
+	</div>
+</div>
+	<div class="col">
+		<img ng-src="{{selectedCard.imgUrl}}" class="cardImg"/>
+	</div>
+	<div class="col">
+		<select
+			size="15"
+			class="deckCards"
+			default-to-first
+			ng-model="selectedDeckItem">
+			<option disabled>Total: whatever</option>
+			<option disabled>Creatures: whatever</option>
+			<option ng-repeat="item in deckCards | byType:'creature'">
+				{{item.cardType}}  {{item.name}}
+			</option>
+			<option disabled>Other Spells: whatever</option>
+			<option ng-repeat="item in deckCards | byType:'other'">
+				{{item.cardType}}  {{item.name}}
+			</option>
+			<option disabled>Other Spells: whatever</option>
+			<option ng-repeat="item in deckCards | byType:'other'">
+				{{item.cardType}}  {{item.name}}
+			</option>
+			<option disabled>Lands: whatever</option>
+			<option ng-repeat="item in deckCards | byType:'land'">
+				{{item.cardType}}  {{item.name}}
+			</option>
+			<option></option>
+		</select>
+	</div>
+</form>

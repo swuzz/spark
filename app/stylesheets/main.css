@@ -1,0 +1,78 @@
+body {
+	font-family: "Hevetica", sans-serif;
+	font-size: 14px;
+	padding: 0;
+	margin: 0;
+}
+
+.left-nav {
+	left: 0;
+	padding: 10px;
+	position: fixed;
+	top: 0;
+	width: 40px;
+}
+
+.left-nav :last-child {
+	margin-bottom: 0px;
+}
+
+div.link {
+	font-size: 14px;
+	padding-bottom: 8px;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+.content {
+	padding-top: 10px;
+	margin-left: 70px;
+}
+
+div.allCards {
+	border: 1px solid #d9d9d9;
+}
+
+div.col1 {
+	width: 240px;
+}
+
+div.inputRow {
+	padding-bottom: 10px;
+	text-align: right;
+}
+
+input {
+	border: 1px solid #d9d9d9;
+	font-size: 13px;
+	padding-left: 5px;
+	width: 160px;
+	height: 26px;
+}
+
+.deckCards {
+	width: 240px;
+	border: 1px solid #d9d9d9;
+	font-size: 13px;
+	height: 338px;
+}
+
+.filteredCards {
+	border: 1px solid #d9d9d9;
+	font-size: 13px;
+	height: 268px;
+	width: 240px;
+	padding: 5px;
+}
+
+img.cardImg {
+	height: 340;
+}
+
+div.col {
+	float: left;
+	padding-right: 10px;
+}

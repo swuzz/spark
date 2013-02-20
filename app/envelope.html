@@ -1,0 +1,23 @@
+<html ng-app="spark">
+	<head>
+		<meta charset="utf-8">
+		<title>Sparks</title>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+		<script type="text/javascript" src="javascripts/app.js"></script>
+	  	<script src="javascripts/controllers.js"></script>
+	  	<script src="javascripts/filters.js"></script>
+	  	<script src="javascripts/directives.js"></script>
+	</head>
+	<body>
+		<div class="left-nav">
+    		<div class="link"><a href="#/decks">Decks</a></div>
+    		<div class="link"><a href="#/play">Play</a></div>
+  		</div>
+		<div class="content">
+  			<div ng-view></div>
+  		</div>
+
+	</body>
+</html>
