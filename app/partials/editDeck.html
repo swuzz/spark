@@ -1,0 +1,52 @@
+<form ng-submit="saveDeck()">
+	<div class="col">
+		<div class="inputRow col1">
+			<label for="name">Deck name </label>
+			<input required id="name" ng-model="deckName"/>
+		</div>
+		<div on-enter="pushCard()">
+			<div class="inputRow col1">
+				<label for="queryMumboJumbo">Add a card </label>
+				<input 
+					id="queryMumboJumbo"
+					ng-model="query" 
+					ng-change="filterCards()" 
+					copy-arrow-presses/>
+			</div>
+			<select
+				size="15" 
+				id="filteredCards" 
+				class="filteredCards col1" 
+				ng-model="selectedCard" 
+				ng-options="card.name for card in filteredCards">
+			</select>
+		</div>
+	</div>
+	<div class="col">
+		<img ng-src="{{imgCard.imgUrl}}" class="cardImg"/>
+	</div>
+	<div class="col">
+		<select
+			size="15"
+			class="deckCards"
+			id="deckCards"
+			deck-item-keys 
+			ng-model="selectedDeckItem">
+			<option disabled>Total: {{deckCards.length}}</option>
+			<option disabled>Creatures: {{deckByType.creatures.length}}</option>
+			<option ng-repeat="item in deckItemsByType.creatures" value={{item.card}}>
+				{{item.count}}  {{item.card.name}}
+			</option>
+			<option disabled>Other Spells: {{deckByType.others.length}}</option>
+			<option ng-repeat="item in deckItemsByType.others" value={{item.card}}>
+				{{item.count}}  {{item.card.name}}
+			</option>
+			<option disabled>Lands: {{deckByType.lands.length}}</option>
+			<option ng-repeat="item in deckItemsByType.lands" value={{item.card}}>
+				{{item.count}}  {{item.card.name}}
+			</option>
+			<option class="hideMe" style="display:none"></option>
+		</select>
+	</div>
+	<input type="submit" class="floatClear" value="Save Deck"/>
+</form>
