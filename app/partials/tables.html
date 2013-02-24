@@ -1,0 +1,46 @@
+<div>You are signed in as {{name}}</div>
+<div>You are invited to {{tables.length}} tables</div>
+<a ng-click="newTableName = oldNewTableName;
+			 createOpened = true">
+	Create a table
+</a>
+<div class="nestedCreate" ng-show="createOpened" class="createTable">
+	<form ng-submit="createTable()">
+		<div class="inputRow col1">
+			<label for="name">Table name </label>
+			<input required id="name" ng-model="newTableName"/>
+		</div>
+		<div class="inputRow col1">
+			<label for="invitees">Invitees </label>
+			<input id="invitees" ng-model="newTableInvitees"
+			       placeholder="email1, email2"/>
+		</div>
+		<input type="submit" value="Create"/>
+		<button ng-click="oldNewTableName = newTableName;
+						  newTableName = 'butt';
+						  createOpened = false">
+			Cancel
+		</button>
+	</form>
+</div>
+<div ng-repeat="table in tables">
+	<div>
+		{{table.name}}
+		<a ng-href="#/play/{{table.id}}">Sit at</a>
+		<a ng-click="tableEdit[table.id] = true; hook()">Edit</a>
+		<a ng-href="/deleteTable/{{table.id}}">Delete</a>
+	</div>
+	<div class="nestedCreate" ng-show="tableEdit[table.id]">
+		<form>
+			<div class="inputRow col1">
+				<label for="invitees">Invitees </label>
+				<input id="invitees" ng-model="newTableInvitees"
+				       placeholder="email1, email2"/>
+			</div>
+			<input type="submit" value="Save"/>
+			<button ng-click="tableEdit[table.id] = false; hook()">
+				Cancel
+			</button>
+		</form>
+	</div>
+</div>

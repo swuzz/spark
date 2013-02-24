@@ -1,0 +1,7 @@
+Pick a deck
+<div ng-show="numDecks == 0">
+	Ain't got know decks. Try making one <a href="/#/decks/new/edit">here</a>.
+</div>
+<div ng-repeat="deck in decks">
+	<a ng-href="/#/play/{{gameId}}/{{deck.id}}">{{deck.name}}</a>
+</div>

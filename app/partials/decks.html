@@ -1,3 +1,8 @@
 <div>You are signed in as {{name}}</div>
 <div>You have {{numDecks}} decks</div>
-<a href="#/decksCreate">Create a new Deck</a>
+<a href="#/decks/new/edit">Create a new Deck</a>
+<div ng-repeat="deck in decks">
+	{{deck.name}} 
+	<a ng-href="#/decks/{{deck.id}}/edit">Edit</a>
+	<a ng-href="/deleteDeck/{{deck.id}}">Delete</a>
+</div>
