@@ -1,0 +1,40 @@
+<html ng-app="spark">
+	<head>
+		<meta charset="utf-8">
+		<title>Sparks</title>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/play.css">
+		<script type="text/javascript" src="/javascripts/app.js"></script>
+	  	<script type="text/javascript" src="/javascripts/controllers.js"></script>
+	  	<script type="text/javascript" src="/javascripts/filters.js"></script>
+	  	<script type="text/javascript" src="/javascripts/directives.js"></script>
+	</head>
+	<body>
+		<div class="container">
+    		<div width-fifth-height class="infoCol">
+    			<div width-fifth-height track-fifth-height ng-style="fifthHeightWidth" class="oppInfo fifthHeight">oppenent's info</div>
+    			<div width-fifth-height class="stack">stack goes here</div>
+    			<div width-fifth-height class="myInfo fifthHeight">my's info</div>
+    			<div width-fifth-height class="counters fifthHeight">my counters and tokens</div>
+    		</div>
+    		<div class="fields">
+    			<div class="oppFirstRow fifthHeight">oppenent's lands</div>
+    			<div class="oppSecondRow fifthHeight">opponent's not-lands</div>
+    			<div class="mySecondRow fifthHeight">my not-lands go here</div>
+    			<div class="myFirstRow fifthHeight">my lands go here</div>
+    			<div class="myHand fifthHeight">my hand</div>
+    		</div>
+    		<div match-card-width class="cardAndChat">
+    			<div maintain-card-aspect-ratio class="cardImg">card image goes here</div>
+  				<div on-enter="pushChat()" class="chat">
+  					<input placeholder="Enter to chat" ng-model="pendingChat" />
+  					<div ng-repeat="chat in chats">
+  						{{chat}}
+  					</div>
+  				</div>
+  				<div class="actions">Choose a deck</div>
+    		</div>
+  		</div>
+	</body>
+</html>
